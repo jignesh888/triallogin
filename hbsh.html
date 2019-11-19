@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border = 1>-->
+<!--         {% for key, value in result.items() %}-->
+<!--            <tr>-->
+<!--               <th> {{ key }} </th>-->
+<!--               <td> {{ value }} </td>-->
+<!--            </tr>-->
+<!--         {% endfor %}-->
+<!--      	</table>-->
+
+    {% for var in string1 %}
+            {% for a in var.split(",") %}
+                <h5>{{ var }}</h5>
+            {% endfor %}
+        {% endfor %}
+
+
+    {% for x in string1.split(',') %}
+
+                <h5>{{x}}</h5>
+
+        {% endfor %}
+
+
+
+
+
+
+
+
+    {% for dict_item in string1 %}
+            {% for key, value in dict_item.items() %}
+                <h1>Key: {{key}}</h1>
+                <h2>Value: {{value}}</h2>
+            {% endfor %}
+        {% endfor %}
+
+
+
+
+
+ # rr1 = str(result)
+
+            # for s in result:
+            #     for ss in s:
+            #         a['username'] = ss['username']
+            #         a['password'] = ss['password']
+            #         return a
+            # for row in result:
+            #     for row1 in row:
+            #         a['username'] = row1['username']
+            #         a['password'] = row1['password']
+                    # count = count+1
+                    # rr= str(count)
+
+            #Method 1:
+            # for i in bad_chars:
+            #     rr1=rr1.replace(i,'')
+            # result1 = str(rr1)
+
+
+            # for line in result1:
+            #     x = line.split(",")
+            #     a = x[0]
+            #     b = x[1]
+                # c = len(b)-1
+                # b = b[0:c]
+                # d[a] = b
+
+            # s = "{" + result1 + "}"
+
+            #Method 2:
+            # rr1 = ''.join(i for i in rr1 if not i in bad_chars)
+
+            #Method 3:
+            # rr1 = filter(lambda i: i not in bad_chars, rr1)
+
+            #Method 4:
+            # rr1 = rr1.translate(''.join(bad_chars))
+            # rr = print(result)
+
+            # resulttt = {'X-My-Header': 'foo', 'Jignesh': 'hello','X-My-Headerrrrrrr': 'foo', 'Jigneshh': 'hello'}
+
+
+
+
+
+
+    #rr1 = str(result)
+            # rr1 = str(result).strip("()")
+
+            # for i in bad_chars:
+            #       rr1=rr1.replace(i,'')
+            #       rr1 = str(rr1)
+            # rr1 = [{'A': 'val1', 'B': 'val2'}, {'C': 'val3', 'D': 'val4'}]
+</body>
+</html>
+
+
+
+<!-- Container fluid  -->
+<!--            <div class="container">-->
+<!--                <div class="card">-->
+<!--                    <form method="POST" action="/adminupdate/{{ newvalue[0]['id'] }}">-->
+<!--                        <div class="form-group">-->
+<!--                        {% if msg1 %}-->
+<!--                            <p><strong>Error:</strong> {{ msg1 }}-->
+<!--                        {% endif %}-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--    		                <label for="username">User Name:</label>-->
+<!--    		                <input type="text" class="form-control" id="username" name="username" value="{{ newvalue['username'] }}" required>-->
+<!--  		                </div>-->
+<!--                        <div class="form-group">-->
+<!--    		                <label for="email">Email:</label>-->
+<!--    		                <input type="text" class="form-control" id="email" name="email" value="{{ newvalue['email'] }}">-->
+<!--  		                    {% if msg2 %}-->
+<!--                                 <p><strong>Error:</strong> {{ msg2 }}-->
+<!--                            {% endif %}-->
+<!--                        </div>-->
+
+<!--		                <div class="form-group">-->
+<!--    		                <label for="password">Password:</label>-->
+<!--    		                <input type="text" class="form-control" id="password" name="password" value="{{ newvalue['password'] }}">-->
+<!--                            {% if msg %}-->
+<!--                                 <p><strong>Error:</strong> {{ msg }}-->
+<!--                            {% endif %}-->
+<!--  		                </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="birthdate">Birthdate:</label>-->
+<!--                            <input type="date" date-format="yyyy-mm-dd" class="form-control" id="birthdate" name="birthdate" value="{{ newvalue['birthdate'] }}" required>-->
+<!--                        </div>-->
+<!--                        <label>Gender:</label>-->
+<!--                        <div class="form-check">-->
+<!--                             <label class="form-check-label">-->
+<!--                             <input type="radio" class="form-check-input" value="male" name="gender" {% if newvalue['gender']=='male' %} checked{% endif %}>Male-->
+<!--                             </label>-->
+<!--                        </div>-->
+<!--                        <div class="form-check">-->
+<!--                             <label class="form-check-label">-->
+<!--                             <input type="radio" class="form-check-input" value="female" name="gender" {% if newvalue['gender']=='female' %} checked{% endif %}>Female-->
+<!--                             </label>-->
+<!--                        </div>-->
+<!--                        <label></label>-->
+<!--&lt;!&ndash;                        <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <label for="gender">Gender:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="text" class="form-control" id="gender" name="gender" value="{{ newvalue['gender'] }}">&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="device_id">Device ID:</label>-->
+<!--                            <input type="text" class="form-control" id="device_id" name="device_id" value="{{ newvalue  ['device_id'] }}" required>-->
+<!--                        </div>-->
+<!--                        <input type="submit" class="btn btn-primary" value="Update">-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <!-- End Container fluid  -->
+
+
+
+
+

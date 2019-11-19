@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+	<h1>Welcome {{ user }}</h1>
+	</div>
+</div>
+<div class="container">
+	<form>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>Device Name</th>
+					<th>IP Address</th>
+					<th>Appliances</th>
+					<th>Condition</th>
+					<th>Modification</th>
+				</tr>
+			</thead>
+		{% for i in range(0,len) %}
+			<tbody>
+				<tr>
+					<td>{{ string1[i]['id'] }}</td>
+					<td>{{ string1[i]['dname'] }}</td>
+					<td>{{ string1[i]['ip'] }}</td>
+					<td>{{ string1[i]['appliances'] }}</td>
+					<td>{{ string1[i]['action'] }}</td>
+					<td><a href="/edit/{{ string1[i]['id'] }}">Edit</a>/<a href="/delete/{{ string1[i]['id'] }}">Delete</a></td>
+				</tr>
+			</tbody>
+		{% endfor %}
+		</table>
+    </form>
+	<form action="{{ url_for('ins') }}" method="POST">
+  		<div class="form-group">
+    		<label for="dname">Device Name:</label>
+    		<input type="text" class="form-control" id="dname" name="dname">
+  		</div>
+  		<div class="form-group">
+    		<label for="ip">IP Address:</label>
+    		<input type="text" class="form-control" id="ip" name="ip">
+  		</div>
+		<div class="form-group">
+    		<label for="appl">Appliances:</label>
+    		<input type="text" class="form-control" id="appl" name="appl">
+  		</div>
+		<div class="form-group">
+    		<label for="action">Condition:</label>
+    		<input type="text" class="form-control" id="action" name="action">
+  		</div>
+  		<input type="submit" class="btn btn-primary" value="Add New Device">
+
+	</form>
+	<a href="{{ url_for('login') }}">Log out</a>
+
+</div>
+</body>
+</html>
+
+
+
+
+{% for i in range(0,len) %}
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck{{i}}" name="example{{i}}">
+                        <label class="custom-control-label" for="customCheck{{i}}">{{ print[i]['dname'] }}</label>
+                    </div>
+                {% endfor %}
+
+

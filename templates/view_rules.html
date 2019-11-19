@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>{{ title1 }} | View Rules</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='css/lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="{{ url_for('static', filename='css/lib/calendar2/semantic.ui.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/lib/calendar2/pignose.calendar.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/lib/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/helper.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+    <!--[if lt IE 9]>
+    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body class="fix-header fix-sidebar">
+<!--     Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-collapse col-md-4">
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                       <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                       <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    </ul>
+                </div>
+                <div class="col-md-4"><center><span><a href="{{ url_for('login') }}" class="navbar-brand">Connected Home</a></span></center></div>
+                <div class="col-md-4"></div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li> <a  href="{{ url_for('login') }}" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard </span></a></li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-desktop"></i><span class="hide-menu">Manage Devices</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{ url_for('ins1') }}">Add Device</a></li>
+                                <li><a href="{{ url_for('viewd') }}">View Device</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa fa-book"></i><span class="hide-menu">Manage Rules</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{ url_for('hdform') }}">Add Rule</a></li>
+                                <li><a href="{{ url_for('viewr') }}">View Rules</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-devider"></li>
+						<li> <a  href="{{ url_for('logout') }}" aria-expanded="false"><i class="fa fa-power-off"></i><span class="hide-menu">Log out</span></a></li>
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Forms</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Layout</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Pages</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-map-marker"></i><span class="hide-menu">Maps</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-level-down"></i><span class="hide-menu">Multi level dd</span></a></li>-->
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Rules</h3> </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Rules</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <div class="card">
+                            <div class="card-title"><h4>Wi-Fi</h4></div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+			                            <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Device</th>
+                                                <th>Appliance</th>
+                                                <th>Condition</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        {% for i in range(0,len) %}
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ i+1 }}</td>
+                                                <td>{{ result[i]['device'] }}</td>
+                                                <td>{{ result[i]['dname'] }}</td>
+                                                    {% if result[i]['condition']=='1' %}
+                                                    <td> On </td>
+                                                    {% else %}
+                                                    <td> Off </td>
+                                                    {% endif %}
+                                                <td><a href="{{ url_for('ruleup',val = result[i]['id']) }}"><i class="fa fa-pencil-square-o fa-2x"></i></a><a href="{{ url_for('delr',val = result[i]['id']) }}" style="padding:10px;"><i class="fa fa-trash-o fa-2x" onclick = "return confirm('Are you sure?')"></i></a></td>
+
+                                            </tr>
+                                        </tbody>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                    <div class="col-xs-6 col-md-6">
+                        <div class="card">
+                            <div class="card-title"><h4>Bluetooth</h4></div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+			                            <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Device</th>
+                                                <th>Appliance</th>
+                                                <th>Condition</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        {% for i in range(0,len1) %}
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ i+1 }}</td>
+                                                <td>{{ result1[i]['name'] }}</td>
+                                                <td>{{ result1[i]['dname'] }}</td>
+                                                    {% if result1[i]['condition']=='1' %}
+                                                    <td> On </td>
+                                                    {% else %}
+                                                    <td> Off </td>
+                                                    {% endif %}
+                                                <td><a href="{{ url_for('ruleup1',val = result1[i]['id']) }}"><i class="fa fa-pencil-square-o fa-2x"></i></a><a href="{{ url_for('blueruledel',val =  result1[i]['id']) }}" style="padding:10px;"><i class="fa fa-trash-o fa-2x" onclick = "return confirm('Are you sure?')"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- /# card -->
+            </div>
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <div class="card">
+                            <div class="card-title"><h4>IR for WiFi</h4></div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+			                            <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Device</th>
+                                                <th>IR Device</th>
+                                                <th>Button</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        {% for i in range(0,len2) %}
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ i+1 }}</td>
+                                                <td>{{ result2[i]['device'] }}</td>
+                                                <td>{{ result2[i]['name'] }}</td>
+
+                                                {% if result2[i]['btnid']=='hex1' %}
+                                                    <td>POWER</td>
+                                                {% elif result2[i]['btnid']=='hex2' %}
+                                                    <td>MUTE</td>
+                                                {% elif result2[i]['btnid']=='hex3' %}
+                                                    <td>UP</td>
+                                                {% elif result2[i]['btnid']=='hex4' %}
+                                                    <td>DOWN</td>
+                                                {% elif result2[i]['btnid']=='hex5' %}
+                                                    <td>LEFT</td>
+                                                {% elif result2[i]['btnid']=='hex6' %}
+                                                    <td>RIGHT</td>
+                                                {% elif result2[i]['btnid']=='hex7' %}
+                                                    <td>SETTINGS</td>
+                                                {% elif result2[i]['btnid']=='hex8' %}
+                                                    <td>OK</td>
+                                                {% elif result2[i]['btnid']=='hex9' %}
+                                                    <td>RETURN</td>
+                                                {% elif result2[i]['btnid']=='hex10' %}
+                                                    <td>SOURCE</td>
+                                                {% endif %}
+
+                                                <td><a href="{{ url_for('ruleup2',val = result2[i]['id']) }}"><i class="fa fa-pencil-square-o fa-2x"></i></a><a href="{{ url_for('irruledel', val = result2[i]['id']) }}" style="padding:10px;"><i class="fa fa-trash-o fa-2x" onclick = "return confirm('Are you sure?')"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <div class="card">
+                            <div class="card-title"><h4>IR for Bluetooth</h4></div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+			                            <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Device</th>
+                                                <th>IR Device</th>
+                                                <th>Button</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        {% for i in range(0,len3) %}
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ i+1 }}</td>
+                                                <td>{{ result3[i]['device'] }}</td>
+                                                <td>{{ result3[i]['remote'] }}</td>
+
+                                                {% if result3[i]['btnid']=='hex1' %}
+                                                    <td>POWER</td>
+                                                {% elif result3[i]['btnid']=='hex2' %}
+                                                    <td>MUTE</td>
+                                                {% elif result3[i]['btnid']=='hex3' %}
+                                                    <td>UP</td>
+                                                {% elif result3[i]['btnid']=='hex4' %}
+                                                    <td>DOWN</td>
+                                                {% elif result3[i]['btnid']=='hex5' %}
+                                                    <td>LEFT</td>
+                                                {% elif result3[i]['btnid']=='hex6' %}
+                                                    <td>RIGHT</td>
+                                                {% elif result3[i]['btnid']=='hex7' %}
+                                                    <td>SETTINGS</td>
+                                                {% elif result3[i]['btnid']=='hex8' %}
+                                                    <td>OK</td>
+                                                {% elif result3[i]['btnid']=='hex9' %}
+                                                    <td>RETURN</td>
+                                                {% elif result3[i]['btnid']=='hex10' %}
+                                                    <td>SOURCE</td>
+                                                {% endif %}
+
+                                                <td><a href="{{ url_for('ruleup3',val = result3[i]['id']) }}"><i class="fa fa-pencil-square-o fa-2x"></i></a><a href="{{ url_for('irruledel', val = result3[i]['id']) }}" style="padding:10px;"><i class="fa fa-trash-o fa-2x" onclick = "return confirm('Are you sure?')"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            <!-- End Container fluid  -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="{{ url_for('static', filename='js/lib/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{{ url_for('static', filename='js/lib/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{{ url_for('static', filename='js/jquery.slimscroll.js') }}"></script>
+    <!--Menu sidebar -->
+    <script src="{{ url_for('static', filename='js/sidebarmenu.js') }}"></script>
+    <!--stickey kit -->
+    <script src="{{ url_for('static', filename='js/lib/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
+    <!--Custom JavaScript -->
+
+
+    <!-- Amchart -->
+     <script src="{{ url_for('static', filename='js/lib/morris-chart/raphael-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/morris-chart/morris.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/morris-chart/dashboard1-init.js') }}"></script>
+
+
+	<script src="{{ url_for('static', filename='js/lib/calendar-2/moment.latest.min.js') }}"></script>
+    <!-- scripit init-->
+    <script src="{{ url_for('static', filename='js/lib/calendar-2/semantic.ui.min.js') }}"></script>
+    <!-- scripit init-->
+    <script src="{{ url_for('static', filename='js/lib/calendar-2/prism.min.js') }}"></script>
+    <!-- scripit init-->
+    <script src="{{ url_for('static', filename='js/lib/calendar-2/pignose.calendar.min.js') }}"></script>
+    <!-- scripit init-->
+    <script src="{{ url_for('static', filename='js/lib/calendar-2/pignose.init.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/lib/owl-carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/owl-carousel/owl.carousel-init.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- scripit init-->
+
+<!--    <script src="{{ url_for('static', filename='js/custom.min.js') }}"></script>-->
+
+</body>
+
+</html>

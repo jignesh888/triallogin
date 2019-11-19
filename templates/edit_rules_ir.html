@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='css/lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/lib/calendar2/semantic.ui.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/lib/calendar2/pignose.calendar.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/lib/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/helper.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+    <!--[if lt IE 9]>
+    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar">
+<!--     Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+        <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-collapse col-md-4">
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                       <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                       <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    </ul>
+                </div>
+                <div class="col-md-4"><center><span><a href="{{ url_for('login') }}" class="navbar-brand">Connected Home</a></span></center></div>
+                <div class="col-md-4"></div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li> <a  href="{{ url_for('login') }}" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard </span></a></li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-desktop"></i><span class="hide-menu">Manage Devices</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{ url_for('ins1') }}">Add Device</a></li>
+                                <li><a href="{{ url_for('viewd') }}">View Device</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa fa-book"></i><span class="hide-menu">Manage Rules</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{ url_for('hdform') }}">Add Rule</a></li>
+                                <li><a href="{{ url_for('viewr') }}">View Rules</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-devider"></li>
+						<li> <a  href="{{ url_for('logout') }}" aria-expanded="false"><i class="fa fa-power-off"></i><span class="hide-menu">Log out</span></a></li>
+<!--						<li> <a  href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Components</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Forms</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Layout</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Pages</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-map-marker"></i><span class="hide-menu">Maps</span></a></li>-->
+<!--                        <li> <a  href="#" aria-expanded="false"><i class="fa fa-level-down"></i><span class="hide-menu">Multi level dd</span></a></li>-->
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Update Rules</h3> </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Update Rules</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+<div class="container">
+    <form action="{{ url_for('uprule2', val = result2[0]['id']) }}" method="POST">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-title"><label>Device</label></div>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="device">
+                        {% for i in range(0, len) %}
+						<option value="{{ result[i]['id'] }}">{{ result[i]['device'] }}</option>
+                        {% endfor %}
+						</select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-title"><label>IR Device</label></div>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="irdevice">
+                        {% for i in range(0, len1) %}
+					    <option value="{{ result1[i]['id'] }}">{{ result1[i]['name'] }}</option>
+                        {% endfor %}
+					    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-title"><label>Button</label></div>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="btn">
+                            <option value="hex1">POWER</option>
+                            <option value="hex2">MUTE</option>
+                            <option value="hex3">UP</option>
+                            <option value="hex4">DOWN</option>
+                            <option value="hex5">LEFT</option>
+                            <option value="hex6">RIGHT</option>
+                            <option value="hex7">SETTINGS</option>
+                            <option value="hex8">OK</option>
+                            <option value="hex9">RETURN</option>
+                            <option value="hex10">SOURCE</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div><center><input type="submit" class="btn btn-primary" value="Update"></center></div>
+    </form>
+</div>
+            <!-- End Container fluid  -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="{{ url_for('static', filename='js/lib/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{{ url_for('static', filename='js/lib/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{{ url_for('static', filename='js/jquery.slimscroll.js') }}"></script>
+    <!--Menu sidebar -->
+    <script src="{{ url_for('static', filename='js/sidebarmenu.js') }}"></script>
+    <!--stickey kit -->
+    <script src="{{ url_for('static', filename='js/lib/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
+    <!--Custom JavaScript -->
+
+
+    <!-- Amchart -->
+     <script src="{{ url_for('static', filename='js/lib/morris-chart/raphael-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/morris-chart/morris.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/morris-chart/dashboard1-init.js') }}"></script>
+
+
+	<script src="{{ url_for('static', filename='js/lib/calendar-2/moment.latest.min.js') }}"></script>
+    <!-- scripit init-->
+    <script src="{{ url_for('static', filename='js/lib/calendar-2/semantic.ui.min.js') }}"></script>
+    <!-- scripit init-->
+    <script src="{{ url_for('static', filename='js/lib/calendar-2/prism.min.js') }}"></script>
+    <!-- scripit init-->
+    <script src="{{ url_for('static', filename='js/lib/calendar-2/pignose.calendar.min.js') }}"></script>
+    <!-- scripit init-->
+    <script src="{{ url_for('static', filename='js/lib/calendar-2/pignose.init.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/lib/owl-carousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lib/owl-carousel/owl.carousel-init.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- scripit init-->
+
+<!--    <script src="{{ url_for('static', filename='js/custom.min.js') }}"></script>-->
+
+</body>
+
+</html>
